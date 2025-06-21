@@ -6,15 +6,10 @@ app = FastAPI()
 def homepage():
     return "Ciao, questa è l'homepage"
 
-
-
 @app.get("/ciao") #metodo api (path api)
 def homepage():
-
-    a = 10
-    a += 5
     return "Ciao, sono nel path ciao"
 
-@app.get("/ciao") #metodo api (path api)
-def homepage(nome: str, eta:int):
-    return "ciao" + nome
+@app.get("/ciao")
+def saluto(nome: str, cognome: str):
+    return "ciao " + nome + cognome
